@@ -1,15 +1,15 @@
 <%-include("header")%>
 <p>注册成功，请登录</p>
 
-<form method="post" action="/index">
+<form method="post" action="/post">
     <div>
-        <label>用户名：</label><input />
+        <label>用户名：</label><input name="signin_name"/>
     </div>
     <div>
-        <label>密  码：</label><input />
+        <label>密  码：</label><input name="signin_pass"/>
     </div>
 
-    <input type="submit"  />
+    <input type="submit"  value="提交"/>
 
 </form>
 

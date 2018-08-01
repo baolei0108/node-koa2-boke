@@ -2,6 +2,7 @@
 
 var add = require('./add.js')
 var expect = require('chai').expect
+var fetch = require('node-fetch')
 
 describe('加法函数的测试 组合1', function() {
 
@@ -62,6 +63,22 @@ describe('测试组2', function() {
     //     expect(add(1,3)).to.be.equal(4)
     // });
 
+});
+
+
+
+
+describe('测试接口', function() {
+    it('请求测试', function() {
+        return fetch('http://61.129.128.56:8802/api/ClickRank/GetClickRank')
+          .then(function(res) {
+              return res.json();
+
+          }).then(function(json) {
+              expect(json).to.be.an('object')
+             
+          })
+    })
 });
 
 

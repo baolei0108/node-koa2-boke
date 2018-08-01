@@ -33,6 +33,7 @@ app.use(bodyParser())
 app.use(require('./routers/index.js').routes())
 app.use(require('./routers/login.js').routes())  //注册路由
 app.use(require('./routers/signin.js').routes())  // 登录路由
+app.use(require('./routers/post.js').routes())  // 登录成功后界面 --路由
 
 
 

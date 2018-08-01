@@ -15,7 +15,7 @@ router.get('/login', async(ctx, next) => {
 router.post('/login', async(ctx, next) => {
     //await ctx.render('<h1>yes</h1>')
     
-    console.log(ctx.request.body)
+    //console.log(ctx.request.body)
     var name = ctx.request.body.name;
     var pas= ctx.request.body.password
     var repas = ctx.request.body.repeatpass
@@ -57,7 +57,7 @@ router.post('/login', async(ctx, next) => {
     }
 
     await userMoudle.findDataByName(user.name)
-      .then(async function(result) {
+      .then(function(result) {
           console.log('reslust: ' + result)
 
           if(result.length) {

@@ -12,13 +12,7 @@ router.get('/signin', async(ctx, next) => {
 })
 
 
-router.post('/signin', async(ctx, next) => {
-    //ctx.body = 'login'
-    await ctx.render('index', {
-        
-    })
 
-}) 
 
 
 module.exports = router
