@@ -17,7 +17,7 @@ module.exports = {
 
     catchWithCacheFile: async function(url, options, cache_time, timeout) {
 
-         console.log('cache: '+ cache)
+         //console.log('cache: '+ cache)
         
          let options_hash = ''
          if(options) {
@@ -26,7 +26,7 @@ module.exports = {
 
          let key = encryption.sha1(url + options_hash) //将key加密进行处理
          let cache_value = cache.get(key) //尝试获取内存缓存
-         console.log('cache_value: ' + cache_value)
+         //console.log('cache_value: ' + cache_value)
 
          if(cache_value != null) {
              return cache_value

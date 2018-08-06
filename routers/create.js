@@ -44,23 +44,50 @@ router.post('/create', async(ctx, next) => {
      }
 
 
-     //输入信息都正确之后
-     await ctx.render('post')  //转到个人主页页面
+     
 
 
      //之后，将新文章写进数据库里面
      var name = ctx.cookies.get('name')
-     console.log('create-cooie-get: '+ name)
-     //console.log('ctx.session:' + ctx.session)
-     //console.log('ctx.session.name222=' + ctx.session.name)
-     let post = {
-         name: name,
-         title: title,
-         content: content
-     }
+     var result = []
 
 
-     postMoudle.insertPostinfo([post.name, post.title, post.content, '1', '1', '1', '1'])
+    
+
+
+
+    //  //读取数据库数据
+    //  await postMoudle.findPostByName(name)
+    //  .then(function(res) {
+    //     //console.log('res: '+ res[1].title)
+    //     result = res
+    //  })
+    // .catch(function(e) {
+    //      console.log(e)
+    // })
+
+    
+    //  //输入信息都正确之后
+    //  await ctx.render('post', {
+    //      name: name,
+    //      result: result
+    //  })  //转到个人主页页面
+
+     
+
+
+    let post = {
+        name: name,
+        title: title,
+        content: content
+    }
+    await postMoudle.insertPostinfo([post.name, post.title, post.content, '1', '1', '1', '1'])
+
+
+
+    ctx.redirect("/post")
+
+     
 
 
      

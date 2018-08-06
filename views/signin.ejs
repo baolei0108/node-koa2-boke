@@ -1,15 +1,15 @@
 <%-include("header")%>
-<p>注册成功，请登录</p>
+<p>欢迎你，请登录</p>
 
 <form method="post" action="/post">
     <div>
-        <label>用户名：</label><input name="signin_name"/>
+        <label>用户名：</label><input name="signin_name" class="name_inp" />
     </div>
     <div>
-        <label>密  码：</label><input name="signin_pass"/>
+        <label>密  码：</label><input name="signin_pass" class="name_pas" />
     </div>
 
-    <input type="submit"  value="提交"/>
+    <input type="submit"  value="提交" class="submit" />
 
 </form>
 
@@ -17,12 +17,18 @@
 
 
 
+<script>
+    $(".submit").click(function() {
+        var name = $(".name_inp").val().trim()
+        var pass = $(".name_pas").val().trim()
+        if(name=='' || pass=='') {
+            alert('不能为空')
+        }
 
+    })
+     
 
-
-
-
-
+</script>
 
 
 

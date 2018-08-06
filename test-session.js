@@ -21,13 +21,29 @@ const CONFIGG = {
 server.use(session(CONFIGG, server));
 // or if you prefer all default config, just use => app.use(session(app));
 
-server.use(ctx => {
+server.use((ctx, next) => {
   // ignore favicon
-  if (ctx.path === "/favicon.ico") return;
-  console.log(ctx.session);
+  //if (ctx.path === "/favicon.ico") return;
+  console.log('1-' + ctx.session);
   let n = ctx.session.views || 0;
   ctx.session.views = ++n;
-  ctx.body = n + " views";
+  var num = ctx.session.views
+  console.log('1-' +  num)
+  //ctx.body = n + " views";
+
+  next()
+});
+
+
+server.use(ctx => {
+  // ignore favicon
+  //if (ctx.path === "/favicon.ico") return;
+  console.log('2-' + ctx.session);
+  let n = ctx.session.views2 || 0;
+  ctx.session.views2 = ++n;
+  var num = ctx.session.views2
+  console.log('2-' + num)
+  //ctx.body = n + " views";
 });
 
 server.listen(8080);

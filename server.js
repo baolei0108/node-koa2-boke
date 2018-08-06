@@ -24,20 +24,7 @@ app.use(views(path.join(__dirname, './views'), {
 
 
 
-//处理post需要解析body
-app.use(bodyParser())
-
-
-
-//引入路由
-app.use(require('./routers/index.js').routes())
-app.use(require('./routers/login.js').routes())  //注册路由
-app.use(require('./routers/signin.js').routes())  // 登录路由
-app.use(require('./routers/post.js').routes())  // 登录成功后界面 --路由
-app.use(require('./routers/create.js').routes())  // 发表文章界面
-
-
-//使用 koa-session
+//使用 koa-session的设置开始
 app.keys = ["hello world"];
 const CONFIGG = {
     key: 'koa:sess', /** (string) cookie key (default is koa:sess) */
@@ -51,13 +38,32 @@ const CONFIGG = {
     rolling: false, /** (boolean) Force a session identifier cookie to be set on every response. The expiration is reset to the original maxAge, resetting the expiration countdown. (default is false) */
     renew: false, /** (boolean) renew session when session is nearly expired, so we can always keep user logged in. (default is false)*/
 };
+app.use(session(CONFIGG, app))
+// 设置结束
 
-app.use(session(CONFIGG, app));
-// or if you prefer all default config, just use => app.use(session(app));
+
+
+
+//处理post需要解析body
+app.use(bodyParser())
+
+
+
+
+
+//引入路由,放在server.js的最后
+app.use(require('./routers/index.js').routes())
+app.use(require('./routers/login.js').routes())  //注册路由
+app.use(require('./routers/signin.js').routes())  // 登录路由
+app.use(require('./routers/post.js').routes())  // 登录成功后界面 --路由
+app.use(require('./routers/create.js').routes())  // 发表文章界面
+
 
 
 app.listen(config.port)
 
-console.log(config.test.caijingnenws)
+//console.log(config.test.caijingnenws)
 
 console.log(`listen on http://localhost ${config.port}` )
+
+

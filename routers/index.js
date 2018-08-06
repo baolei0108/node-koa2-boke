@@ -10,6 +10,7 @@ router.get('/', async(ctx, next) => {
     //ctx.body = 'index'
     //ctx.session.userinfo='张三';
     ctx.cookies.set('cid','hello')
+    ctx.cookies.set('name','')
     let caijing;
     caijing = await caijingnews('8');
 

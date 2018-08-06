@@ -34,7 +34,7 @@ module.exports = async function(id) {
 
     }
 
-    console.log(arr)
+    //console.log(arr)
 
     return arr;
 

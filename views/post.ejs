@@ -4,13 +4,25 @@
 <div>  <span>你好： </span> <%=name %>
 
     <a href="/create" class="post_create">发表新文章</a>
+    <a href="/" >退出登录</a>
+
 </div>
 
 
 <p>显示个人全部文章</p>
 <div class="post_all" >
+    <% result.forEach(function(v,i) {   %>
+        <div>
+            <div><span>文章标题是：</span><%= v.title %></div>
+            <div><span>文章内容是：</span><%= v.content%></div>
+
+        </div>
+
+    <% }) %>
 
 </div>
 
+<script>
 
+</script>
 <%-include("footer") %>
