@@ -21,3 +21,11 @@
 
 
 
+下载安装npm install
+运行程序：node server
+查看页面：localhost:3000/
+
+
+
+
+
