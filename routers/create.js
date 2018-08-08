@@ -48,7 +48,9 @@ router.post('/create', async(ctx, next) => {
 
 
      //之后，将新文章写进数据库里面
-     var name = ctx.cookies.get('name')
+     //var name = ctx.cookies.get('name')
+     var name = ctx.session.name
+     console.log('name: ' + name)
      var result = []
 
 
