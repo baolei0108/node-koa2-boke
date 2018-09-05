@@ -16,8 +16,7 @@
 
 完成使用koa-session,如ctx.session.name完成了页面之间传值，并在会话中保存值
 
-
-
+0808修改了完整的koa-session，现在程序可正常运行
 
 
 
