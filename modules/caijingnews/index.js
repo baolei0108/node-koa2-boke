@@ -18,8 +18,17 @@ module.exports = async function(id) {
     
     //console.log(result);
     //处理过后的数据
+    console.log('result: '+ result);
     var arr =[];
-    var res = result.Data[0]
+    var res='';
+    //防止接口挂掉
+    if(result == null){
+        res='';
+    }
+    else{
+        res = result.Data[0]
+    }
+    
     if(res == ''){
         arr = []
     } else {

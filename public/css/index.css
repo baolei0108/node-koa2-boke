@@ -1,24 +1,19 @@
 .btn {
-    background:green;
+  background: green;
 }
-
 .container {
-    border:1px solid red;
+  border: 1px solid red;
 }
-
-
 /* post.ejs */
 .post_create {
-    position: absolute;
-    left: 200px;
+  position: absolute;
+  left: 200px;
 }
-
 .post_all {
-    width: 500px;
-    height: 300px;
-    border: 2px solid rgb(0, 81, 255);
-
+  width: 500px;
+  height: 300px;
+  border: 2px solid #0051ff;
 }
-
-
-
+.item {
+  color: red;
+}
